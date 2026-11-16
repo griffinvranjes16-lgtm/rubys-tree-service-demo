@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruby's Tree Service — Tree Trimming, Removal &amp; Stump Grinding | Lansing, MI</title>
+<meta name="description" content="Ruby's Tree Service — a local family-operated tree service in Lansing, MI. Tree trimming and removal, stump grinding, brush chipping and removal. Free estimates. Call (517) 371-8733.">
+<style>
+  :root{
+    --green-900:#14291a;
+    --green-800:#1d3a24;
+    --green-700:#275233;
+    --green-600:#2f6b3e;
+    --sage:#7ba05b;
+    --cream:#f6f3ea;
+    --paper:#fffdf6;
+    --ink:#1c241d;
+    --muted:#5a665c;
+    --amber:#d9a441;
+    --amber-dark:#b9822a;
+    --line:#e2dcc9;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+  h1,h2,h3{line-height:1.15;letter-spacing:-.01em}
+  a{color:inherit}
+  img{max-width:100%}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  /* Demo banner */
+  .demo-banner{background:#f5b301;color:#231a00;text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.05em;padding:8px 14px}
+
+  /* Header */
+  header.site{background:var(--green-900);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+  .header-in{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1120px;margin:0 auto;padding:14px 20px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+  .brand-mark{width:44px;height:44px;flex:none;border-radius:10px;background:var(--amber);display:flex;align-items:center;justify-content:center}
+  .brand-name{font-size:21px;font-weight:800;line-height:1.1}
+  .brand-name span{color:var(--amber)}
+  .brand-sub{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#bcd0b8;font-weight:600}
+  nav.main{display:flex;gap:26px}
+  nav.main a{color:#dfe8dc;text-decoration:none;font-size:14.5px;font-weight:600}
+  nav.main a:hover{color:#fff}
+  .header-cta{display:flex;gap:10px;align-items:center}
+  .btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid transparent;cursor:pointer;text-align:center;transition:transform .15s ease,background .15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-amber{background:var(--amber);color:#231a00}
+  .btn-amber:hover{background:#e5b45a}
+  .btn-outline{border-color:#fff;color:#fff;background:transparent}
+  .btn-outline:hover{background:rgba(255,255,255,.12)}
+  .btn-green{background:var(--green-700);color:#fff}
+  .btn-green:hover{background:var(--green-600)}
+  .btn-sm{padding:10px 18px;font-size:14px}
+
+  /* Hero */
+  .hero{background:linear-gradient(160deg,var(--green-900) 0%,var(--green-800) 55%,var(--green-700) 100%);color:#fff;padding:76px 0 84px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-140px;bottom:-180px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(217,164,65,.22),transparent 65%);pointer-events:none}
+  .hero .wrap{position:relative;z-index:1}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#ffe9b8;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+  .hero h1{font-size:clamp(38px,6vw,62px);font-weight:800;margin:22px 0 16px;max-width:720px}
+  .hero h1 em{font-style:normal;color:var(--amber)}
+  .hero p.lede{font-size:19px;color:#d8e2d4;max-width:620px;margin-bottom:30px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+  .hero-facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.18);font-size:14.5px;color:#cfe0c9}
+  .hero-facts strong{color:#fff}
+
+  /* Trust strip */
+  .trust{background:var(--paper);border-bottom:1px solid var(--line)}
+  .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .trust-item{padding:22px 18px;text-align:center;border-left:1px solid var(--line)}
+  .trust-item:first-child{border-left:none}
+  .trust-item .t-num{font-size:15px;font-weight:800;color:var(--green-700)}
+  .trust-item .t-label{font-size:13.5px;color:var(--muted)}
+
+  /* Sections */
+  section{padding:68px 0}
+  .section-head{max-width:640px;margin:0 auto 40px;text-align:center}
+  .section-head h2{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px}
+  .section-head p{color:var(--muted);font-size:17px}
+  .eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--green-600)}
+
+  /* Services */
+  .tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:26px}
+  .search-box{flex:1;min-width:240px;max-width:420px;display:flex;align-items:center;gap:10px;background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:11px 18px}
+  .search-box input{border:none;outline:none;background:transparent;font-size:15.5px;width:100%;color:var(--ink);font-family:inherit}
+  .filter-btns{display:flex;flex-wrap:wrap;gap:8px}
+  .filter-btn{border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:700;color:var(--ink);cursor:pointer;font-family:inherit}
+  .filter-btn:hover{border-color:var(--green-600);color:var(--green-700)}
+  .filter-btn.active{background:var(--green-800);border-color:var(--green-800);color:#fff}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .service-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
+  .service-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(20,41,26,.12)}
+  .service-icon{width:56px;height:56px;border-radius:14px;background:#e8f0e2;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .service-card h3{font-size:21px;font-weight:800;margin-bottom:8px}
+  .service-card p{color:var(--muted);font-size:15.5px;flex:1}
+  .service-tag{display:inline-block;margin-top:18px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green-700)}
+  .service-card .card-cta{margin-top:14px}
+  .service-card .card-cta a{color:var(--green-700);font-weight:700;text-decoration:none;font-size:15px}
+  .service-card .card-cta a:hover{text-decoration:underline}
+  .no-results{display:none;text-align:center;color:var(--muted);padding:36px 0;font-size:16px;grid-column:1/-1}
+  .no-results.show{display:block}
+
+  /* Seasonal spotlight */
+  .spotlight{background:var(--green-900);color:#fff;border-radius:20px;padding:44px 40px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;position:relative;overflow:hidden}
+  .spotlight::before{content:"";position:absolute;left:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(217,164,65,.25),transparent 65%)}
+  .spotlight .eyebrow{color:var(--amber)}
+  .spotlight h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;margin:10px 0 12px;position:relative}
+  .spotlight p{color:#d8e2d4;font-size:16.5px;max-width:640px;position:relative}
+  .spotlight ul{margin:18px 0 0;padding-left:0;list-style:none;position:relative}
+  .spotlight li{color:#eef3ea;font-size:15.5px;padding:6px 0 6px 28px;position:relative}
+  .spotlight li::before{content:"✓";position:absolute;left:0;color:var(--amber);font-weight:800}
+  .spotlight .btn{white-space:nowrap}
+
+  /* How it works */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
+  .step{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px 22px;position:relative}
+  .step-num{width:48px;height:48px;border-radius:50%;background:var(--green-800);color:#fff;font-size:20px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .step h3{font-size:19px;font-weight:800;margin-bottom:8px}
+  .step p{color:var(--muted);font-size:15px}
+
+  /* Estimate form */
+  .estimate-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:44px;align-items:start}
+  .estimate-copy h2{font-size:clamp(28px,4vw,38px);font-weight:800;margin-bottom:14px}
+  .estimate-copy p{color:var(--muted);font-size:16.5px;margin-bottom:16px}
+  .estimate-copy ul{list-style:none;margin:20px 0}
+  .estimate-copy li{padding:8px 0 8px 30px;position:relative;font-size:15.5px}
+  .estimate-copy li::before{content:"✓";position:absolute;left:0;color:var(--green-600);font-weight:800}
+  form.estimate{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:32px 28px;box-shadow:0 12px 32px rgba(20,41,26,.08)}
+  form.estimate h3{font-size:22px;font-weight:800;margin-bottom:6px}
+  form.estimate .form-sub{color:var(--muted);font-size:14.5px;margin-bottom:22px}
+  .field{margin-bottom:16px}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  label{display:block;font-weight:700;font-size:13.5px;margin-bottom:6px}
+  input[type=text],input[type=tel],select,textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-size:15.5px;font-family:inherit;color:var(--ink);background:#fff}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--green-600);outline-offset:1px;border-color:var(--green-600)}
+  textarea{min-height:96px;resize:vertical}
+  .field .hint{font-size:12.5px;color:var(--muted);margin-top:5px}
+  .submit-btn{width:100%;font-size:16px}
+  .form-note{margin-top:14px;font-size:13px;color:var(--muted);text-align:center}
+  .confirm{display:none;margin-top:20px;border:1.5px solid #bcd8b4;background:#eef6ea;border-radius:12px;padding:20px}
+  .confirm.show{display:block}
+  .confirm h4{font-size:18px;font-weight:800;color:var(--green-800);margin-bottom:8px}
+  .confirm p{font-size:15px;color:#33473a;white-space:pre-line}
+  .confirm .btn{margin-top:14px}
+
+  /* Visit */
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .visit-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:32px 28px}
+  .visit-card h3{font-size:22px;font-weight:800;margin-bottom:12px}
+  .visit-card p{color:var(--muted);font-size:16px;margin-bottom:8px}
+  .visit-card p strong{color:var(--ink)}
+  .visit-card .btn{margin-top:16px}
+  .map-link{display:inline-block;margin-top:6px;color:var(--green-700);font-weight:700}
+
+  /* Footer */
+  footer.site{background:var(--green-900);color:#cfe0c9;padding:52px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:36px}
+  .foot-grid h4{color:#fff;font-size:15px;font-weight:800;margin-bottom:14px;letter-spacing:.04em}
+  .foot-grid ul{list-style:none}
+  .foot-grid li{margin-bottom:8px;font-size:14.5px}
+  .foot-grid a{color:#cfe0c9;text-decoration:none}
+  .foot-grid a:hover{color:#fff;text-decoration:underline}
+  .foot-brand{font-size:22px;font-weight:800;color:#fff;margin-bottom:8px}
+  .foot-brand span{color:var(--amber)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.16);padding-top:22px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:13px;color:#9db598}
+
+  .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,140%);background:var(--green-900);color:#fff;padding:13px 24px;border-radius:999px;font-size:14.5px;font-weight:600;z-index:100;transition:transform .3s ease;box-shadow:0 12px 28px rgba(0,0,0,.3)}
+  .toast.show{transform:translate(-50%,0)}
+  .float-call{position:fixed;right:20px;bottom:20px;z-index:90;width:58px;height:58px;border-radius:50%;background:var(--amber);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(0,0,0,.3);text-decoration:none}
+  .float-call:hover{transform:scale(1.06)}
+
+  @media (max-width:900px){
+    .services-grid{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .estimate-wrap{grid-template-columns:1fr;gap:32px}
+    .spotlight{grid-template-columns:1fr;padding:36px 28px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    nav.main{display:none}
+  }
+  @media (max-width:600px){
+    section{padding:52px 0}
+    .services-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .trust-grid{grid-template-columns:1fr}
+    .trust-item{border-left:none;border-top:1px solid var(--line)}
+    .trust-item:first-child{border-top:none}
+    .field-row{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .header-cta .btn-outline{display:none}
+    .hero{padding:56px 0 64px}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">DEMO PREVIEW &nbsp;—&nbsp; This site was built for Ruby's Tree Service to preview. It is not live on their domain yet.</div>
+
+<header class="site">
+  <div class="header-in">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#14291a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L17 9 H14 L19 15 H5 L10 9 H7 Z"/><path d="M12 15 V22"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">Ruby's <span>Tree Service</span></span><br>
+        <span class="brand-sub">Lansing, Michigan</span>
+      </span>
+    </a>
+    <nav class="main" aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#spotlight">Fall Check-Up</a>
+      <a href="#how">How It Works</a>
+      <a href="#estimate">Free Estimate</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-outline btn-sm" href="#estimate">Free Estimate</a>
+      <a class="btn btn-amber btn-sm" href="tel:+15173718733">Call (517) 371-8733</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="hero-eyebrow">🌲 Local Family-Operated Business</span>
+      <h1>Trees handled. <em>Yard left clean.</em></h1>
+      <p class="lede">Ruby's Tree Service is a local family-operated business serving the Lansing area — tree trimming and removal, stump grinding, brush chipping and removal. Straightforward work, done right.</p>
+      <div class="hero-actions">
+        <a class="btn btn-amber" href="tel:+15173718733">Call (517) 371-8733</a>
+        <a class="btn btn-outline" href="#estimate">Get a Free Estimate →</a>
+      </div>
+      <div class="hero-facts">
+        <span><strong>Family-operated</strong> · Local crew</span>
+        <span>Serving the <strong>Lansing area</strong></span>
+        <span><strong>Free estimates</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust">
+    <div class="wrap trust-grid">
+      <div class="trust-item">
+        <div class="t-num">Family-Operated</div>
+        <div class="t-label">A local family business serving the Lansing area</div>
+      </div>
+      <div class="trust-item">
+        <div class="t-num">5 Services, One Call</div>
+        <div class="t-label">Trimming, removal, stumps, brush chipping &amp; removal</div>
+      </div>
+      <div class="trust-item">
+        <div class="t-num">Free Estimates</div>
+        <div class="t-label">Call or send the form — no obligation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What We Do</div>
+        <h2>Tree work, start to finish</h2>
+        <p>Search or filter below to find the service you need. Not sure what a job calls for? Call — we'll talk it through with you.</p>
+      </div>
+
+      <div class="tools">
+        <div class="search-box">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5a665c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" id="serviceSearch" placeholder="Search services — try &quot;stump&quot; or &quot;trim&quot;" aria-label="Search services">
+        </div>
+        <div class="filter-btns" id="serviceFilters">
+          <button class="filter-btn active" data-filter="all" type="button">All Services</button>
+          <button class="filter-btn" data-filter="tree" type="button">Tree Work</button>
+          <button class="filter-btn" data-filter="stump-brush" type="button">Stump &amp; Brush</button>
+        </div>
+      </div>
+
+      <div class="services-grid" id="servicesGrid">
+        <article class="service-card" data-category="tree">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2f6b3e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L17 9 H14 L19 15 H5 L10 9 H7 Z"/><path d="M12 15 V22"/></svg>
+          </div>
+          <h3>Tree Trimming</h3>
+          <p>Shaping, thinning, and deadwood removal to keep trees healthy and clear of roofs, driveways, and lines. Regular trimming keeps small problems from becoming big ones.</p>
+          <span class="service-tag">Tree Work</span>
+          <div class="card-cta"><a href="#estimate" data-service="Tree Trimming">Get an estimate →</a></div>
+        </article>
+
+        <article class="service-card" data-category="tree">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2f6b3e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 L14 4"/><path d="M14 4 L20 8 L10 22"/><path d="M4 20 H10"/></svg>
+          </div>
+          <h3>Tree Removal</h3>
+          <p>Full takedowns for dead, damaged, or in-the-way trees — including trees leaning toward a house or crowding a structure. Wood and debris hauled away when the job is done.</p>
+          <span class="service-tag">Tree Work</span>
+          <div class="card-cta"><a href="#estimate" data-service="Tree Removal">Get an estimate →</a></div>
+        </article>
+
+        <article class="service-card" data-category="stump-brush">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2f6b3e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><path d="M12 4 V2 M12 22 V20 M4 12 H2 M22 12 H20"/></svg>
+          </div>
+          <h3>Stump Grinding</h3>
+          <p>Grinding stumps down below grade so the spot can be replanted, reseeded, or simply mowed over — no more tripping over what's left of the old tree.</p>
+          <span class="service-tag">Stump &amp; Brush</span>
+          <div class="card-cta"><a href="#estimate" data-service="Stump Grinding">Get an estimate →</a></div>
+        </article>
+
+        <article class="service-card" data-category="stump-brush">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2f6b3e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L12 12"/><path d="M12 8 L7 4 M12 8 L17 4"/><path d="M8 21 H16 M9 17 H15"/></svg>
+          </div>
+          <h3>Brush Chipping</h3>
+          <p>On-site chipping that turns limbs and brush into chips instead of a pile in the yard — a fast way to clear storm debris and cut-back branches.</p>
+          <span class="service-tag">Stump &amp; Brush</span>
+          <div class="card-cta"><a href="#estimate" data-service="Brush Chipping">Get an estimate →</a></div>
+        </article>
+
+        <article class="service-card" data-category="stump-brush">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2f6b3e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21 H21"/><path d="M6 21 V12 L12 6 L18 12 V21"/><path d="M9 21 V15 H15 V21"/></svg>
+          </div>
+          <h3>Brush Removal</h3>
+          <p>Hauling brush piles and overgrowth off your property so the yard is clear again — whether it's one overgrown corner or a whole fence line.</p>
+          <span class="service-tag">Stump &amp; Brush</span>
+          <div class="card-cta"><a href="#estimate" data-service="Brush Removal">Get an estimate →</a></div>
+        </article>
+
+        <p class="no-results" id="noResults">No services match that search. Try a different word — or call <a href="tel:+15173718733">(517) 371-8733</a> and tell us what you're dealing with.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASONAL SPOTLIGHT -->
+  <section id="spotlight" style="padding-top:0">
+    <div class="wrap">
+      <div class="spotlight">
+        <div>
+          <div class="eyebrow">Fall &amp; Storm Season · Tree Safety Check</div>
+          <h2>Before the winter wind finds the weak branch</h2>
+          <p>Once the leaves drop, problems are easier to spot — and winter wind and heavy snow will test every weak limb. If something looks off, now is the time to get it looked at.</p>
+          <ul>
+            <li>Dead or hanging limbs over the roof, driveway, or walkway</li>
+            <li>A tree leaning further than it used to, or with cracks in the trunk</li>
+            <li>Brush and storm debris piled up before the snow covers it</li>
+            <li>Stumps left from summer removals, ready to grind before the ground freezes</li>
+          </ul>
+        </div>
+        <a class="btn btn-amber" href="#estimate">Get a Free Estimate →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">How It Works</div>
+        <h2>Simple from first call to clean yard</h2>
+        <p>No runaround — here's how a job with Ruby's goes.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Get in Touch</h3>
+          <p>Call <strong>(517) 371-8733</strong> or send the estimate form below. Tell us what's going on with your trees.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>We Come Take a Look</h3>
+          <p>We visit the property and walk the job with you, so the price is based on the actual trees — not a guess over the phone.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Clear Estimate</h3>
+          <p>You get a straight price for the work before anything starts. No surprises, no obligation.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Work Day</h3>
+          <p>We do the job and clean up after ourselves — the yard is left tidy when we leave.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTIMATE FORM -->
+  <section id="estimate" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap estimate-wrap">
+      <div class="estimate-copy">
+        <div class="eyebrow">Free Estimate</div>
+        <h2>Tell us about your trees</h2>
+        <p>Fill out the form and we'll call you back to talk it through and set up a time to take a look. Nothing is booked until we talk.</p>
+        <ul>
+          <li>One call covers trimming, removal, stumps, and brush</li>
+          <li>We look at the job in person before pricing it</li>
+          <li>Serving the Lansing area</li>
+        </ul>
+        <p>Prefer to talk now? <strong><a href="tel:+15173718733" style="color:var(--green-700)">Call (517) 371-8733</a></strong>.</p>
+      </div>
+      <form class="estimate" id="estimateForm" novalidate>
+        <h3>Request a Free Estimate</h3>
+        <p class="form-sub">This form doesn't send anything anywhere — it builds your estimate request to read when you call.</p>
+        <div class="field-row">
+          <div class="field">
+            <label for="estName">Your name</label>
+            <input type="text" id="estName" placeholder="Your full name" required>
+          </div>
+          <div class="field">
+            <label for="estPhone">Phone</label>
+            <input type="tel" id="estPhone" placeholder="(517) 555-1234" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="estService">What do you need?</label>
+          <select id="estService" required>
+            <option value="" selected>Choose a service…</option>
+            <option>Tree Trimming</option>
+            <option>Tree Removal</option>
+            <option>Stump Grinding</option>
+            <option>Brush Chipping</option>
+            <option>Brush Removal</option>
+            <option>Not sure — several things / need advice</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="estDetails">Tell us about the job <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+          <textarea id="estDetails" placeholder="e.g. Large dead oak leaning toward the garage, plus a stump from last summer"></textarea>
+          <p class="hint">Anything that helps: how many trees, how big, how close to the house.</p>
+        </div>
+        <button class="btn btn-green submit-btn" type="submit">Build My Estimate Request →</button>
+        <p class="form-note">No account needed. No information leaves this page.</p>
+        <div class="confirm" id="estConfirm" aria-live="polite">
+          <h4>Your estimate request — ready</h4>
+          <p id="confirmText"></p>
+          <a class="btn btn-amber" href="tel:+15173718733">Call (517) 371-8733 to Send It</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Find Us</div>
+        <h2>Based in Lansing, working across the area</h2>
+      </div>
+      <div class="visit-grid">
+        <div class="visit-card">
+          <h3>Ruby's Tree Service</h3>
+          <p><strong>611 Terminal Rd</strong><br>Lansing, MI 48906</p>
+          <p>Serving the Lansing area.</p>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=611+Terminal+Rd+Lansing+MI+48906" target="_blank" rel="noopener">Open in Google Maps →</a>
+        </div>
+        <div class="visit-card">
+          <h3>Get in Touch</h3>
+          <p>Call: <strong><a href="tel:+15173718733" style="color:var(--green-700)">(517) 371-8733</a></strong></p>
+          <p>Find us on Instagram — search <strong>Ruby's Tree Service</strong>.</p>
+          <p>Have photos of the tree? Mention it when you call — it helps us understand the job before we visit.</p>
+          <a class="btn btn-green" href="tel:+15173718733">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Ruby's <span>Tree Service</span></div>
+        <p style="max-width:360px">A local family-operated business serving the Lansing area. Tree trimming and removal, stump grinding, brush chipping and removal.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Tree Trimming</a></li>
+          <li><a href="#services">Tree Removal</a></li>
+          <li><a href="#services">Stump Grinding</a></li>
+          <li><a href="#services">Brush Chipping</a></li>
+          <li><a href="#services">Brush Removal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>611 Terminal Rd</li>
+          <li>Lansing, MI 48906</li>
+          <li><a href="tel:+15173718733">(517) 371-8733</a></li>
+          <li><a href="#estimate">Request a Free Estimate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Ruby's Tree Service · Lansing, MI</span>
+      <span>Demo preview — this site is not live on their domain yet.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-call" href="tel:+15173718733" aria-label="Call Ruby's Tree Service">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#14291a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(s, c){ return (c || document).querySelector(s); };
+  var $$ = function(s, c){ return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  /* Toast */
+  var toastEl = $("#toast"), toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove("show"); }, 3400);
+  }
+
+  /* Services: search + filter */
+  var grid = $("#servicesGrid"), noRes = $("#noResults"), searchInput = $("#serviceSearch");
+  var currentFilter = "all";
+  function applyFilter(){
+    var q = (searchInput.value || "").trim().toLowerCase();
+    var visible = 0;
+    $$(".service-card", grid).forEach(function(card){
+      var hay = card.textContent.toLowerCase();
+      var ok = (currentFilter === "all" || card.getAttribute("data-category") === currentFilter) && (!q || hay.indexOf(q) !== -1);
+      card.style.display = ok ? "" : "none";
+      if(ok) visible++;
+    });
+    noRes.classList.toggle("show", visible === 0);
+  }
+  $$("#serviceFilters .filter-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      $$("#serviceFilters .filter-btn").forEach(function(b){ b.classList.remove("active"); });
+      btn.classList.add("active");
+      currentFilter = btn.getAttribute("data-filter");
+      applyFilter();
+    });
+  });
+  searchInput.addEventListener("input", applyFilter);
+
+  /* Service card links pre-select the service in the estimate form */
+  $$("[data-service]").forEach(function(el){
+    el.addEventListener("click", function(){
+      var svc = el.getAttribute("data-service");
+      var sel = $("#estService");
+      if(sel){ sel.value = svc; }
+      toast("Got it — " + svc + " is selected below.");
+    });
+  });
+
+  /* Estimate form: build on-page confirmation, submit nothing */
+  $("#estimateForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = $("#estName").value.trim();
+    var phone = $("#estPhone").value.trim();
+    var svc = $("#estService").value;
+    var ok = true;
+    [["#estName", name], ["#estPhone", phone]].forEach(function(pair){
+      var f = $(pair[0]).closest(".field");
+      f.style.outline = pair[1] ? "" : "2px solid #a33";
+      if(!pair[1]) ok = false;
+    });
+    var svcField = $("#estService").closest(".field");
+    svcField.style.outline = svc ? "" : "2px solid #a33";
+    if(!svc) ok = false;
+    if(!ok){ toast("A few details are missing — check the highlighted fields."); return; }
+    var details = $("#estDetails").value.trim();
+    var summary = name + " · " + svc + "\nPhone: " + phone;
+    if(details) summary += "\nJob details: " + details;
+    summary += "\n\nCall (517) 371-8733 and read this out — nothing is booked until you talk to the crew.";
+    $("#confirmText").textContent = summary;
+    $("#estConfirm").classList.add("show");
+    $("#estConfirm").scrollIntoView({behavior:"smooth", block:"center"});
+    toast("Request ready — call to send it in.");
+  });
+})();
+</script>
+</body>
+</html>
